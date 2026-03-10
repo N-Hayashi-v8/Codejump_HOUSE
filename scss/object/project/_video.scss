@@ -1,0 +1,33 @@
+@use "../../foundation/variables" as *;
+
+.p-video{
+  position: relative;
+  height: 100vh;
+  min-height: 680px;
+
+  &__bg{
+    position: fixed;
+    top: 0;
+    left: $layout-sidebar-width;
+    width: calc(100vw - #{$layout-sidebar-width});
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+  }
+}
+
+@media screen and (max-width: $breakpoint-md){
+  .p-video{
+    height: 80vh;
+    min-height: auto;
+
+    &__bg{
+      top: 72px;
+      left: 0;
+      right: 0;
+      width: auto;
+      height: 520px;
+      margin: 0 auto;
+    }
+  }
+}

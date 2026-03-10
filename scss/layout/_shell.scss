@@ -1,0 +1,48 @@
+﻿@use "../foundation/variables" as *;
+
+.l-shell{
+  min-height: 100vh;
+}
+
+.l-sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: $layout-sidebar-width;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 40px 45px 30px;
+  background-color: $color-surface;
+  border-right: 1px solid $color-border;
+}
+
+.l-main{
+  margin-left: $layout-sidebar-width;
+  overflow-x: hidden;
+}
+
+.l-content{
+  width: 100%;
+  max-width: calc(#{$layout-content-max-width} + #{$layout-content-padding-x * 2});
+  margin-inline: auto;
+  padding-inline: $layout-content-padding-x;
+}
+
+@media screen and (max-width: $breakpoint-md){
+  .l-sidebar{
+    width: 100%;
+    height: 72px;
+    padding: 0;
+    border-right: none;
+    overflow-y: visible;
+    z-index: 10;
+  }
+
+  .l-main{
+    margin-left: 0;
+  }
+
+  .l-content{
+    padding-inline: 20px;
+  }
+}

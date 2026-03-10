@@ -1,0 +1,44 @@
+@use "../../foundation/variables" as *;
+
+.p-section-title{
+  margin-bottom: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  text-align: center;
+  font-size: 1.75rem;
+  line-height: 1;
+  font-weight: 700;
+  color: $color-text;
+  white-space: nowrap;
+  &::before,
+  &::after{
+    content: "";
+    width: 28%;
+    border-top: 1px solid currentColor;
+  }
+
+  &--light{
+    color: $color-light-text;
+  }
+}
+
+.p-section-copy{
+  margin-bottom: 60px;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+@media screen and (max-width: $breakpoint-md){
+  .p-section-title{
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+
+    &::before,
+    &::after{
+      width: 18%;
+    }
+  }
+}

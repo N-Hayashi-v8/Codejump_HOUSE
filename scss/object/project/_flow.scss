@@ -1,0 +1,142 @@
+@use "../../foundation/variables" as *;
+
+.p-flow{
+  padding-top: 40px;
+  padding-bottom: 60px;
+  background-color: $color-bg;
+
+  &__layout{
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__figure{
+    position: relative;
+    width: 200px;
+    flex-shrink: 0;
+
+    &::before{
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 30px;
+      left: 75px;
+      width: 50px;
+      background-color: #ffdd00;
+    }
+  }
+
+  &__figure-item{
+    position: relative;
+    z-index: 1;
+    width: 200px;
+    height: 80px;
+    margin-bottom: 66px;
+    background-color: $color-dark;
+    color: $color-light-text;
+    text-align: center;
+    font-size: 0.875rem;
+    line-height: 80px;
+
+    &::before{
+      content: "";
+      position: absolute;
+      top: calc(100% - 1px);
+      left: 0;
+      border-top: 30px solid $color-dark;
+      border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
+    }
+
+    &::after{
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background-color: $color-dark;
+      pointer-events: none;
+    }
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+
+  &__description{
+    flex: 1;
+    margin-left: 10%;
+  }
+
+  &__term{
+    position: relative;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid $color-text;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  &__term-num{
+    position: absolute;
+    left: -45px;
+    bottom: 0;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 50%;
+    background-color: $color-dark;
+    color: $color-light-text;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  &__detail{
+    margin-bottom: 43px;
+    line-height: 1.8;
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-md){
+  .p-flow{
+    padding-bottom: 60px;
+
+    &__layout{
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    &__figure{
+      width: calc(100vw - 80px);
+      margin-bottom: 80px;
+
+      &::before{
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+      }
+    }
+
+    &__figure-item{
+      width: calc(100vw - 80px);
+      margin-bottom: 60px;
+
+      &::before{
+        border-left: calc(50vw - 40px) solid transparent;
+        border-right: calc(50vw - 40px) solid transparent;
+      }
+    }
+
+    &__description{
+      margin-left: 50px;
+    }
+  }
+}

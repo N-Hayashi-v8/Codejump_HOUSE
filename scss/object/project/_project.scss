@@ -1,0 +1,68 @@
+@use "../../foundation/variables" as *;
+
+.p-project{
+  padding-block: 80px;
+  color: $color-light-text;
+  background: linear-gradient(
+    rgba(0,0,0,0),
+    rgba(0,0,0,0.8)
+  );
+
+  &__list{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__item{
+    width: 47%;
+    border: 1px solid $color-light-text;
+    margin-bottom: 50px;
+    position: relative;
+
+    &:last-child,
+    &:nth-last-child(2){
+      margin-bottom: 0;
+    }
+  }
+
+  &__link{
+    display: block;
+
+    &::after{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      box-shadow: 0 -30px 15px -1px #2e2e2e inset;
+    }
+  }
+
+    &__name{
+    position: absolute;
+    left: 7px;
+    bottom: 4px;
+    z-index: 5;
+    color: $color-light-text;
+    font-size: 0.75rem;
+  }
+}
+
+@media screen and (max-width: $breakpoint-md){
+  .p-project{
+    &__list{
+      flex-direction: column;
+    }
+
+    &__item{
+      width: 100%;
+      margin-bottom: 30px;
+
+      &:nth-last-child(2){
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
